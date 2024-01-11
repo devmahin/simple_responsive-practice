@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid aria layout</title>
+    <style>
+        header,nav ,main ,aside ,footer,.advaisar,.sidebar{
+            border: 2px solid red;
+            background-color: tomato;
+        }
+        header{
+            grid-area: header;
+        }
+        nav{
+            grid-area: nav;
+        }
+        main{
+            grid-area: main;
+        }
+        aside{
+            grid-area: aside;
+        }
+        footer{
+            grid-area: footer;
+        }
+        .sidebar{
+            grid-area: sidebar;
+        }
+        .advaisar{
+            grid-area: advaisar;
+        }
+        .container{
+            display: grid;
+            grid-template-areas: "header header header header"
+                              "  nav main main sidebar"
+                                "nav main main advaisar"
+                               " footer footer footer footer"
+            ;
+            gap: 20px;
+        }
+
+            @media screen and (max-width:556px){
+                .container{
+                    grid-template-areas: 
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "advaisar"
+                    "footer"
+                    ;
+                }
+            }
+            @media screen and (min-width: 557px) and (max-width:1100px) {
+                .container{
+                    grid-template-areas: 
+                    "header header header"
+                    "nav nav nav"
+                    "sidebar main main"
+                    "advaisar footer footer"
+                    ;
+                }
+            }
+    </style>
+</head>
+<body class="container">
+    <header>
+        <h1>The header</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>mahin</li>
+            <li>mahin</li>
+            <li>mahin</li>
+            <li>mahin</li>
+            <li>mahin</li>
+        </ul>
+    </nav>
+    <main>
+       <article>
+        <h2>Main artical</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut modi cupiditate ab voluptatem ipsum ducimus nulla dolor repudiandae, maiores ipsam distinctio perspiciatis! Cupiditate soluta provident officia minus inventore asperiores deleniti!</p>
+       </article>
+       <article>
+        <h2>Main artical</h2>
+        <p>Ducimus libero dolorem natus quaerat, maiores labore fugiat ab, velit vero dolores, ipsa ratione sint dolorum quisquam in soluta sequi optio tempore numquam veritatis voluptatibus. Officiis iusto quos quam assumenda.</p>
+       </article>
+     
+    </main>
+        <div class="sidebar">
+            <h1>sidebar</h1>
+        </div>
+        <div class="advaisar">
+            <h1>advaisar</h1>
+        </div>
+       </aside>
+    <footer>
+        <h2>The footer</h2>
+    </footer>
+    
+</body>
+</html>
